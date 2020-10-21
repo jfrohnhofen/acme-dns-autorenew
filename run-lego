@@ -4,3 +4,4 @@ do
   export "${s}=`cat /run/secrets/${s}`"
 done
 yes | lego --dns $DNS_PROVIDER --email $EMAIL --server $CA_SERVER -d `echo $DOMAINS | sed 's/,/ -d /g'` $1
+touch .lego/config.toml
